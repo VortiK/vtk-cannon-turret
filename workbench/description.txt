@@ -1,0 +1,43 @@
+Small mod that adds a cannon turret that can use specially manufactured tank shell magazine ammunitions.
+- Good range (30 vs 18 for laser turrets) but a big minimum range too.
+- Low rate of fire and rotation.
+- Special munitions that don't collide like tanks shells
+- Shells are homing (good against single target), explosive shells target position (good against grouped ennemies).
+- Watch out for friendly fire still !
+- Custom shooting sound : https://instaud.io/1Cm2
+
+The goal of this mod was to make a different turret using tank shells but still close to Vanilla. Unfortunatly there is no way to keep a colliding projectile ammunition that does not friendly fire collision for now. So turret projectiles are homing on entities for normal shells or target a position for explosive shells which is not accurate but balanced with splash damage on grouped ennemies.
+
+Inspiration from an old 0.12 turret mod : https://forums.factorio.com/viewtopic.php?f=93&t=14957 and sprite by the talented modder YuokiTani.
+
+* * *
+
+Probable known issue
+
+2017-08-07
+- Magazine ammo type might not get bonus past Shell damage 6 for each infinite upgrade.
+
+Changelog
+
+2018-01-06 - 1.3.0 - Boom
+-  Custom shooting sound added : https://instaud.io/1Cm2
+
+2017-12-13 - 1.2.1 - Hotfix
+- Fixed crash because of missing icon_size on some entity that is now required.
+- Fixed crash because of changed projectile ammo action property from "perimeter" to "radius" for explosion range.
+
+2017-12-13 - 1.2.0 - Version compatibility
+- Updated for Factorio 0.16
+- Lightened the mod size by 90% by removing media source files
+
+2017-08-07 - 1.1.1 - Fixes
+- Fixed unlocks on existing saves that already researched techs which this mod plugs into. Namely Uranium Shells Magazine unlock and Shells damage and Shooting speed bonus are now properly applied on existing games.
+- Fixed Cannon Shells Magazine ammos item ordering to be properly after each of its own normal shell instead of mixed around.
+
+2017-06-11 - 1.1.0 - Reworked ammo
+- Turret don't use tank shells anymore.
+- Special "magazine" shell ammo built from normal shells. Same stats as tank shells, benefits from shells upgrades (shooting speed and damage).
+- Magazine ammo don't collide, normal shells magazine are homing (good against single target), explosive shells magazine target position (good against groups).
+- Tank shells back to vanilla projectile behaviour.
+
+2017-06-11 - 1.0.0 - initial release

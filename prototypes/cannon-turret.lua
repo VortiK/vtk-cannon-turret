@@ -74,7 +74,8 @@ data:extend(
       sound =
       {
         {
-            filename = "__base__/sound/fight/tank-cannon.ogg",
+            -- filename = "__base__/sound/fight/tank-cannon.ogg",
+            filename = "__vtk-cannon-turret__/sounds/CANNHVY5.ogg",
             volume = 1.0
         }
       },
