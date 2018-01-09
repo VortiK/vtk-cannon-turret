@@ -42,7 +42,7 @@ data:extend(
     },
     magazine_size = 10,
     subgroup = "ammo",
-    order = "d[cannon-shell-magazine]-a[basic]",
+    order = "d[cannon-shell]-a[basic]-m[magazine]",
     stack_size = 200
   },
   {
@@ -76,7 +76,7 @@ data:extend(
     },
     magazine_size = 10,
     subgroup = "ammo",
-    order = "d[cannon-shell-magazine]-c[explosive]",
+    order = "d[cannon-shell]-c[explosive]-m[magazine]",
     stack_size = 200
   },
   {
@@ -110,7 +110,7 @@ data:extend(
     },
     magazine_size = 10,
     subgroup = "ammo",
-    order = "d[cannon-shell-magazine]-e[uranium]",
+    order = "d[cannon-shell]-c[uranium]-m[magazine]",
     stack_size = 200
   },
   {
@@ -144,7 +144,7 @@ data:extend(
     },
     magazine_size = 10,
     subgroup = "ammo",
-    order = "d[explosive-cannon-shell-magazine]-e[uranium]",
+    order = "d[explosive-cannon-shell]-c[uranium]-m[magazine]",
     stack_size = 200
   },
 })
