@@ -5,7 +5,7 @@ for index, force in pairs(game.forces) do
 
 	if technologies["uranium-ammo"].researched then 
 		recipes["uranium-cannon-shell-magazine"].enabled = true
-        recipes["explosive-uranium-cannon-shell-magazine"].enabled = true
+    recipes["explosive-uranium-cannon-shell-magazine"].enabled = true
 	end
 
 -- Magazine ammo bonus are = to non magazine ammo bonus, so we can just copy the bonuses to get the current researched bonus modifiers

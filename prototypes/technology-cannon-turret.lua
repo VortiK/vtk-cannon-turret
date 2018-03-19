@@ -36,6 +36,33 @@ data:extend(
     upgrade = true,
     order = "e-c-c-a"
   },
+  {
+    type = "technology",
+    name = "vtk-cannon-turret-wall-resistance",
+    icon_size = 128,
+    icon = "__vtk-cannon-turret__/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+    effects = 
+    {
+        {
+          type = "nothing",
+          effect_description = "Wall explosion immunity"
+        },
+      },
+    prerequisites = {"vtk-cannon-turret-unlock", "stone-walls"}, 
+    unit =
+    {
+      count = 100,
+      ingredients = {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1},
+      },
+      time = 30,
+    },
+    upgrade = true,
+    order = "e-c-c-a"
+  },
 })
 
 -- Set unlock on uranium magazine ammo on uranium ammo technology
