@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+Date: 02. 03. 2019
+  Changes:
+    - Updated for 0.17.
+    - Added mod thumbnail.
+    - Removed items quickbar behavior as quickbar doesn't exists anymore.
+    - Updated science pack to new names for technologies.
+    - Updated Cannon Shells Magazine ammos bonus to new military technologies (updated to still be the same bonuses as normal cannon shells).
+    - Reduced wall and gate explosion immunity from 100% to 95%.
+    - Thanks to Klonan, Cannon shells now back to normal shells behavior : shooting to a direction and will collide but only with ennemies, no more friendly fire ! (previously normal shells would home in entity and explosive shells would target position).
+    - Renamed mod with my name to find them all more easily.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+Date: 03. 04. 2018
+  Features:
+    - Added gate to explosion immunity research.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
 Date: 19. 03. 2018
   Features:

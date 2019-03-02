@@ -10,11 +10,11 @@ local function update_entity_life(entity, damage, type)
     end
     
     if entity ~= nil
-    and entity.name == "stone-wall"
+    and (entity.name == "stone-wall" or entity.name == "gate")
     and type.name == "explosion" then
         debug("entity "..entity.name..""..entity.unit_number.." took "..damage.." damage of "..type.name.." type")
         debug("health before "..entity.health)
-        entity.health = entity.health + damage
+        entity.health = entity.health + damage*0.95
         debug("health after "..entity.health)
     end
 end

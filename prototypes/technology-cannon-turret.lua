@@ -26,9 +26,9 @@ data:extend(
     {
       count = 100,
       ingredients = {
-        {"science-pack-1", 1},
-        {"science-pack-2", 1},
-        {"science-pack-3", 1},
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
         {"military-science-pack", 1},
       },
       time = 30,
@@ -53,9 +53,9 @@ data:extend(
     {
       count = 100,
       ingredients = {
-        {"science-pack-1", 1},
-        {"science-pack-2", 1},
-        {"science-pack-3", 1},
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
         {"military-science-pack", 1},
       },
       time = 30,
@@ -71,15 +71,9 @@ table.insert(data.raw['technology']['uranium-ammo']['effects'], {type = "unlock-
 
 
 -- Make new cannon turret shell magazine ammo affected by shell technology upgrades
-table.insert(data.raw['technology']['cannon-shell-damage-1']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 0.2})
-table.insert(data.raw['technology']['cannon-shell-damage-2']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 0.2})
-table.insert(data.raw['technology']['cannon-shell-damage-3']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 0.3})
-table.insert(data.raw['technology']['cannon-shell-damage-4']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 0.5})
-table.insert(data.raw['technology']['cannon-shell-damage-5']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 1})
-table.insert(data.raw['technology']['cannon-shell-damage-6']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 1})
+table.insert(data.raw['technology']['physical-projectile-damage-5']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 0.9})
+table.insert(data.raw['technology']['physical-projectile-damage-6']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 1.3})
+table.insert(data.raw['technology']['physical-projectile-damage-7']['effects'], {type = "ammo-damage", ammo_category = "cannon-shell-magazine", modifier = 1})
 
-table.insert(data.raw['technology']['cannon-shell-speed-1']['effects'], {type = "gun-speed", ammo_category = "cannon-shell-magazine", modifier = 0.2})
-table.insert(data.raw['technology']['cannon-shell-speed-2']['effects'], {type = "gun-speed", ammo_category = "cannon-shell-magazine", modifier = 0.2})
-table.insert(data.raw['technology']['cannon-shell-speed-3']['effects'], {type = "gun-speed", ammo_category = "cannon-shell-magazine", modifier = 0.3})
-table.insert(data.raw['technology']['cannon-shell-speed-4']['effects'], {type = "gun-speed", ammo_category = "cannon-shell-magazine", modifier = 0.6})
-table.insert(data.raw['technology']['cannon-shell-speed-5']['effects'], {type = "gun-speed", ammo_category = "cannon-shell-magazine", modifier = 1})
+table.insert(data.raw['technology']['weapon-shooting-speed-5']['effects'], {type = "gun-speed", ammo_category = "cannon-shell-magazine", modifier = 0.8})
+table.insert(data.raw['technology']['weapon-shooting-speed-6']['effects'], {type = "gun-speed", ammo_category = "cannon-shell-magazine", modifier = 1.5})

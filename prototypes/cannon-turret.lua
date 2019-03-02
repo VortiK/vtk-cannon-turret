@@ -91,7 +91,6 @@ data:extend({
     name = "vtk-cannon-turret",
     icon = "__vtk-cannon-turret__/graphics/icons/cannon-turret-icon.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
     subgroup = "defensive-structure",
     order = "b[turret]-c[base]-a[cannon-turret]",
     place_result = "vtk-cannon-turret",

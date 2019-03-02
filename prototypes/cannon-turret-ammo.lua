@@ -17,11 +17,10 @@ data:extend(
     description = "cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/cannon-shell-magazine.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "entity",
+      target_type = "direction", -- was entity
       action =
       {
         type = "direct",
@@ -52,11 +51,10 @@ data:extend(
     description = "explosive-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/explosive-cannon-shell-magazine.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "position",
+      target_type = "direction", -- was position
       action =
       {
         type = "direct",
@@ -87,11 +85,10 @@ data:extend(
     description = "uranium-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/uranium-cannon-shell-magazine.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "entity",
+      target_type = "direction", -- was entity
       action =
       {
         type = "direct",
@@ -122,11 +119,10 @@ data:extend(
     description = "explosive-uranium-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/explosive-uranium-cannon-shell-magazine.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "position",
+      target_type = "direction", -- was position
       action =
       {
         type = "direct",
@@ -191,9 +187,10 @@ data:extend(
     type = "projectile",
     name = "cannon-magazine-projectile",
     flags = {"not-on-map"},
-    -- collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    force_condition = "not-same", 
     acceleration = 0,
-    -- direction_only = true,
+    direction_only = true,
     piercing_damage = 300,
     action =
     {
@@ -247,9 +244,10 @@ data:extend(
     type = "projectile",
     name = "explosive-cannon-magazine-projectile",
     flags = {"not-on-map"},
-    --collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    force_condition = "not-same", 
     acceleration = 0,
-    --direction_only = true,
+    direction_only = true,
     piercing_damage = 100,
     action =
     {
@@ -327,9 +325,10 @@ data:extend(
     type = "projectile",
     name = "uranium-cannon-magazine-projectile",
     flags = {"not-on-map"},
-    --collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    force_condition = "not-same", 
     acceleration = 0,
-    --direction_only = true,
+    direction_only = true,
     piercing_damage = 600,
     action =
     {
@@ -383,9 +382,10 @@ data:extend(
     type = "projectile",
     name = "explosive-uranium-cannon-magazine-projectile",
     flags = {"not-on-map"},
-    --collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    force_condition = "not-same", 
     acceleration = 0,
-    --direction_only = true,
+    direction_only = true,
     piercing_damage = 150,
     action =
     {
