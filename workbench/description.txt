@@ -3,13 +3,12 @@
 Small mod that adds a cannon turret that can use specially manufactured tank shell magazine ammunitions.
 - Good range (30 vs 18 for laser turrets) but a big minimum range too.
 - Low rate of fire and rotation.
-- Special munitions that don't collide like tanks shells
-- Shells are homing (good against single target), explosive shells target position (good against grouped ennemies).
+- Special munitions that don't collide with friendly entities like tanks shells
 - Watch out for friendly fire still !
 - Custom shooting sound : https://instaud.io/1Cm2
 - New technology to make walls immune to explosion damage type to better work with cannon turret.
 
-The goal of this mod was to make a different turret using tank shells but still close to Vanilla. Unfortunatly there is no way to keep a colliding projectile ammunition that does not friendly fire collision for now. So turret projectiles are homing on entities for normal shells or target a position for explosive shells which is not accurate but balanced with splash damage on grouped ennemies.
+The goal of this mod was to make a different turret using tank shells but still close to Vanilla. Turret projectiles are identical to tank shells except they won't collide with friendly entities !
 
 Inspiration from an old 0.12 turret mod : https://forums.factorio.com/viewtopic.php?f=93&t=14957 and sprite by the talented modder YuokiTani.
 
