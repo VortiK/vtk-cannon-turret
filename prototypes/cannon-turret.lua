@@ -42,6 +42,10 @@ data:extend(
     automated_ammo_count = 10,
     attacking_speed = 0.5,
     
+    alert_when_attacking = true,
+    open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
+    close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
+    
     folded_animation = cannon_turret_sheet{direction_count = 8, line_length = 1},
     preparing_animation = cannon_turret_sheet{direction_count = 8, line_length = 1},
     prepared_animation = cannon_turret_sheet{},
