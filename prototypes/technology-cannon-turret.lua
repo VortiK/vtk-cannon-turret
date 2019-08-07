@@ -14,6 +14,10 @@ data:extend(
         },
         {
           type = "unlock-recipe",
+          recipe = "vtk-cannon-turret-heavy"
+        },
+        {
+          type = "unlock-recipe",
           recipe = "cannon-shell-magazine"
         },
         {
@@ -45,7 +49,7 @@ data:extend(
     {
         {
           type = "nothing",
-          effect_description = "Wall explosion immunity"
+          effect_description = "Walls and gates explosion 90% resistance bonus"
         },
       },
     prerequisites = {"vtk-cannon-turret-unlock", "stone-walls"}, 
