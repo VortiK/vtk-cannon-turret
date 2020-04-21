@@ -23,8 +23,9 @@ end
 -- events hooks
 local events = defines.events
 
-script.on_event({events.on_entity_damaged},
+script.on_event(events.on_entity_damaged,
     function(event)
         update_entity_life(event.entity, event.final_damage_amount, event.damage_type)
-    end
+    end,
+    {{filter="type", type = "wall"}, {filter="type", type = "gate"}}
 )

@@ -3,7 +3,7 @@
 Small mod that adds a cannon turret that can use specially manufactured tank shell magazine ammunitions.
 - Good range (30 vs 18 for laser turrets) but a big minimum range too.
 - Low rate of fire and rotation.
-- Special munitions that don't collide with friendly entities like tanks shells
+- Special munitions that don't collide with friendly entities like tanks shells.
 - Watch out for friendly fire still !
 - Custom shooting sound : https://instaud.io/1Cm2
 - New technology to make all walls and gates resistant to explosion damage type to better work with cannon turret. 90% resistance, should work for any modded wall and gate.

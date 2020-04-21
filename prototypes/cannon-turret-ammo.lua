@@ -20,7 +20,7 @@ data:extend(
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "direction", -- was entity
+      target_type = "direction", -- was position -- was entity
       action =
       {
         type = "direct",
@@ -88,7 +88,7 @@ data:extend(
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "direction", -- was entity
+      target_type = "direction", -- was position -- was entity
       action =
       {
         type = "direct",
@@ -180,13 +180,13 @@ data:extend(
   build_ammo_recipe{name = "explosive-uranium-cannon-shell-magazine", ingredient = "explosive-uranium-cannon-shell"},
 })
 
--- New projectiles behavior for cannon turret shell magazine, same as shells but no collision box
+-- New projectiles behavior for cannon turret shell magazine, same as shells
 data:extend(
 {
   {
     type = "projectile",
     name = "cannon-magazine-projectile",
-    flags = {"not-on-map"},
+--    flags = {"not-on-map"},
     collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
     force_condition = "not-same", 
     acceleration = 0,
@@ -240,14 +240,14 @@ data:extend(
       priority = "high"
     },
   },
-    {
+  {
     type = "projectile",
     name = "explosive-cannon-magazine-projectile",
-    flags = {"not-on-map"},
-    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+--    flags = {"not-on-map"},
+    collision_box = {{-0.6, -1.6}, {0.6, 1.6}},
     force_condition = "not-same", 
     acceleration = 0,
-    direction_only = true,
+    direction_only = true, -- make projectile vectorized instead of exploding on target
     piercing_damage = 100,
     action =
     {
@@ -324,7 +324,7 @@ data:extend(
   {
     type = "projectile",
     name = "uranium-cannon-magazine-projectile",
-    flags = {"not-on-map"},
+--    flags = {"not-on-map"},
     collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
     force_condition = "not-same", 
     acceleration = 0,
@@ -381,7 +381,7 @@ data:extend(
   {
     type = "projectile",
     name = "explosive-uranium-cannon-magazine-projectile",
-    flags = {"not-on-map"},
+--    flags = {"not-on-map"},
     collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
     force_condition = "not-same", 
     acceleration = 0,
