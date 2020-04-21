@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.10.0
+Date: 21. 04. 2020
+  Changes:
+    - Super improved graphics kindly provided by JavitoVk !
+    - Upscaled turret and heavy turret.
+    - Proper shadow and mask for heavy turret.
+    - Much nicer ammo magazine icons
+    - ES locale also provided by JavitoVk
+---------------------------------------------------------------------------------------------------
 Version: 1.9.2
 Date: 06. 02. 2020
   Changes:

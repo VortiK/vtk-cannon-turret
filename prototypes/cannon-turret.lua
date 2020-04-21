@@ -14,7 +14,30 @@ return
       line_length = inputs.line_length and inputs.line_length or 8,
       axially_symmetrical = false,
       run_mode = inputs.run_mode and inputs.run_mode or "forward",
-    shift = { 0.35, -0.5 },
+      shift = {0.25,-0.58},
+    }
+  }
+}
+end
+
+function cannon_turret_mask(inputs)
+return
+{
+  layers = 
+  {
+    {
+      filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-mask.png",
+      scale = 0.75,
+      flags = { "mask" },
+      width = 128,
+      height = 128,
+      direction_count = inputs.direction_count and inputs.direction_count or 64,
+      frame_count = inputs.frame_count,
+      line_length = inputs.line_length and inputs.line_length or 8,
+      axially_symmetrical = false,
+      run_mode = inputs.run_mode and inputs.run_mode or "forward",
+      shift = {0.25,-0.58},
+      apply_runtime_tint = true
     }
   }
 }
@@ -25,15 +48,33 @@ local function cannon_turret_heavy_extension(inputs)
 	{
 		filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy.png",
 		priority = "medium",
-		scale = 1.1,
+		scale = 0.5,
 		line_length = 1,
-		width = 92,
-		height = 69,
+    width = 179,
+    height = 132,
 		direction_count = 8,
 		frame_count = 1,
 		run_mode = inputs.run_mode and inputs.run_mode or "forward",
-		shift = {0.055, -0.5},
+		shift = {0.055, -0.7},
 		axially_symmetrical = false
+	}
+end
+
+local function cannon_turret_heavy_extension_mask(inputs)
+	return
+	{
+    filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy-mask.png",
+    scale = 0.5,
+    flags = { "mask" },
+    line_length = 8,
+    width = 72,
+    height = 66,
+    frame_count = 1,
+    axially_symmetrical = false,
+    direction_count = 64,
+    frame_count = 1,
+    shift = {0.055, -0.73},
+    apply_runtime_tint = true
 	}
 end
 
@@ -41,15 +82,15 @@ local function cannon_turret_heavy_extension_shadow(inputs)
 	return
 	{
 		filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy-shadow.png",
-		scale = 1.1,
-		line_length = 1,
-		width = 95,
-		height = 67,
+		scale = 0.5,
+    line_length = 1,
+    width = 193,
+    height = 134,
 		frame_count = 1,
 		draw_as_shadow = true,
 		direction_count = 8,
 		run_mode = inputs.run_mode and inputs.run_mode or "forward",
-		shift = {0.405, 0.2},
+		shift = {0.9, 0.1},
 		axially_symmetrical = false,
 		draw_as_shadow = true
 	}
@@ -62,25 +103,39 @@ local function cannon_turret_heavy_attack(inputs)
 		{
 			{
 				filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy.png",
-				scale = 1.1,
-				line_length = 8,
-				width = 92,
-				height = 69,
+				scale = 0.5,
+ 				line_length = 8,
+        width = 179,
+        height = 132,
 				frame_count = 1,
 				direction_count = 64,
-				shift = {0.055, -0.5},
-				animation_speed = 8,
+				shift = {0.055, -0.75},
+				animation_speed = 8
 			},
 			{
+        filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy-mask.png",
+        scale = 0.5,
+        flags = { "mask" },
+        line_length = 8,
+        width = 72,
+        height = 66,
+        frame_count = 1,
+        axially_symmetrical = false,
+        direction_count = 64,
+        frame_count = 1,
+        shift = {0.055, -0.80},
+        apply_runtime_tint = true
+      },
+			{
 				filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy-shadow.png",
-				scale = 1.1,
-				line_length = 8,
-				width = 95,
-				height = 67,
+				scale = 0.5,
+ 				line_length = 8,
+        width = 193,
+        height = 134,
 				frame_count = 1,
 				draw_as_shadow = true,
+				shift = {1, 0.1},
 				direction_count = 64,
-				shift = {0.405, 0.2},
 			}
 		}
 	}
@@ -93,7 +148,7 @@ data:extend(
     type = "ammo-turret",
     name = "vtk-cannon-turret",
     icon = "__vtk-cannon-turret__/graphics/icons/cannon-turret-icon.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 1, result = "vtk-cannon-turret"},
     max_health = 1500,
@@ -114,12 +169,42 @@ data:extend(
     
     turret_base_has_direction = true,
 
-    folded_animation = cannon_turret_sheet{direction_count = 8, line_length = 1},
-    preparing_animation = cannon_turret_sheet{direction_count = 8, line_length = 1},
-    prepared_animation = cannon_turret_sheet{},
-    attacking_animation = cannon_turret_sheet{},
-    folding_animation = cannon_turret_sheet{direction_count = 8, line_length = 1, run_mode = "backward"},
-    
+    folded_animation = { 
+      layers = 
+      { 
+        cannon_turret_sheet{},
+        cannon_turret_mask{}
+      }
+    },
+    preparing_animation = { 
+      layers = 
+      { 
+        cannon_turret_sheet{},
+        cannon_turret_mask{}
+      }
+    },
+    prepared_animation = { 
+      layers = 
+      { 
+        cannon_turret_sheet{},
+        cannon_turret_mask{}
+      }
+    },
+    attacking_animation = { 
+      layers = 
+      { 
+        cannon_turret_sheet{},
+        cannon_turret_mask{}
+      }
+    },
+    folding_animation = { 
+      layers = 
+      { 
+        cannon_turret_sheet{},
+        cannon_turret_mask{}
+      }
+    },
+
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     
     attack_parameters =
@@ -189,8 +274,9 @@ data:extend(
     {
       layers =
       {
+        cannon_turret_heavy_extension_shadow{},
         cannon_turret_heavy_extension{},
-        cannon_turret_heavy_extension_shadow{}
+        cannon_turret_heavy_extension_mask{}
       }
     },
     preparing_animation = 
@@ -198,7 +284,8 @@ data:extend(
       layers =
       {
         cannon_turret_heavy_extension{},
-        cannon_turret_heavy_extension_shadow{}
+        cannon_turret_heavy_extension_shadow{},
+        cannon_turret_heavy_extension_mask{}
       }
     },
     prepared_animation = cannon_turret_heavy_attack{},
@@ -207,8 +294,9 @@ data:extend(
     { 
       layers = 
       { 
-        cannon_turret_heavy_extension{run_mode = "backward"},
-        cannon_turret_heavy_extension_shadow{run_mode = "backward"}
+        cannon_turret_heavy_extension{},
+        cannon_turret_heavy_extension_shadow{},
+        cannon_turret_heavy_extension_mask{}
       }
     },
     base_picture =
@@ -217,9 +305,10 @@ data:extend(
       {
         {
           filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy-base.png",
+          scale = 0.5,
           priority = "high",
-          width = 90,
-          height = 75,
+          width = 150,
+          height = 118,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
@@ -227,15 +316,16 @@ data:extend(
         },
         {
           filename = "__vtk-cannon-turret__/graphics/entity/cannon-turret-heavy-base-mask.png",
+          scale = 0.5,
           flags = { "mask" },
           line_length = 1,
-          width = 52,
-          height = 47,
+          width = 122,
+          height = 102,
           frame_count = 1,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0.0625, -0.234375},
+          shift = {0.05, -0.15},
           apply_runtime_tint = true
         }
       }
@@ -286,7 +376,7 @@ data:extend({
     type = "item",
     name = "vtk-cannon-turret",
     icon = "__vtk-cannon-turret__/graphics/icons/cannon-turret-icon.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "defensive-structure",
     order = "b[turret]-c[base]-a[cannon-turret]",
     place_result = "vtk-cannon-turret",

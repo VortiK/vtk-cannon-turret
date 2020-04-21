@@ -16,7 +16,7 @@ data:extend(
     name = "cannon-shell-magazine",
     description = "cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/cannon-shell-magazine.png",
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "cannon-shell-magazine",
@@ -50,7 +50,7 @@ data:extend(
     name = "explosive-cannon-shell-magazine",
     description = "explosive-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/explosive-cannon-shell-magazine.png",
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "cannon-shell-magazine",
@@ -84,7 +84,7 @@ data:extend(
     name = "uranium-cannon-shell-magazine",
     description = "uranium-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/uranium-cannon-shell-magazine.png",
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "cannon-shell-magazine",
@@ -118,7 +118,7 @@ data:extend(
     name = "explosive-uranium-cannon-shell-magazine",
     description = "explosive-uranium-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/explosive-uranium-cannon-shell-magazine.png",
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "cannon-shell-magazine",

@@ -13,6 +13,8 @@ The goal of this mod was to make a different turret using tank shells but still 
 
 Inspiration from an old 0.12 turret mod : https://forums.factorio.com/viewtopic.php?f=93&t=14957 and sprite by the talented modder YuokiTani.
 
+1.10 Super improved graphics provided by JavitoVk ! https://mods.factorio.com/mod/vtk-cannon-turret/discussion/5e9def993807a2000cca6d9a
+
 ---------------------------------------------------------------------------------------------------
 
 ## Todo
