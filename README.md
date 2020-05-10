@@ -15,6 +15,10 @@ Inspiration from an old 0.12 turret mod : https://forums.factorio.com/viewtopic.
 
 1.10 Super improved graphics provided by JavitoVk ! https://mods.factorio.com/mod/vtk-cannon-turret/discussion/5e9def993807a2000cca6d9a
 
+![Comparison old vs new gfx](https://mods-data.factorio.com/assets/19f6b549976bba71f0565ed863140932065ea890.png)
+
+Compatible with Krastorio 2 : https://mods.factorio.com/mod/Krastorio2
+
 ---------------------------------------------------------------------------------------------------
 
 ## Todo
