@@ -25,7 +25,7 @@ data:extend(
           recipe = "explosive-cannon-shell-magazine"
         },
       },
-    prerequisites = {"turrets", "tanks"}, 
+    prerequisites = {"gun-turret", "tank"}, 
     unit =
     {
       count = 100,
@@ -52,7 +52,7 @@ data:extend(
           effect_description = "Walls and gates explosion 90% resistance bonus"
         },
       },
-    prerequisites = {"vtk-cannon-turret-unlock", "stone-walls"}, 
+    prerequisites = {"vtk-cannon-turret-unlock", "stone-wall"}, 
     unit =
     {
       count = 100,

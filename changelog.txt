@@ -1,5 +1,19 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.10.0
+Version: 1.12.1
+Date: 15.01.2022
+  Changes:
+    - Fixed crash with Krastorio 2 + Space Exploration because of non existing physical-projectile-damage-16 technology.
+    - Fixed missing physical-projectile-damage-7 to 11 technology addition of Cannon Shell's Magazine damage in Krastorio 2 + Space Exploration.
+    - Added optional dependency to Space Exploration.
+---------------------------------------------------------------------------------------------------
+Version: 1.12.0
+Date: 28.11.2020
+  Changes:
+    - Update compatibility with Factorio 1.1.
+    - Fixes the turrets > gun-turret, stone-walls > stone-wall and tanks > tank change.
+    - Minor locale adjustements.
+---------------------------------------------------------------------------------------------------
+Version: 1.11.0
 Date: 21. 04. 2020
   Changes:
     - Added compatibility to Krastorio 2, cannon shell magazine now properly get research bonuses from Krastorio shooting damange and speed.
