@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 09.12.2024
+  Changes:
+    - Updated for Factorio 2.0 and Space Age.
+    - Refactored Cannon Turret base graphics and mask so it render properly (no visible change in game).
+    - Reduced Cannon Shell Magazine stack size from 200 to 20, still twice the stack of normal cannon shells per ammo which stacks to 100 but a magazine is 10 shells.
+    - Updated all magazine projectile damage to be inline with buffed cannon shells from Factorio 2.0.
+    - Added sounds for items inventory move and turret open & close like in the base game's turrets now.
+    - Added weights to turrets and ammo.
+    - Target priority feature works.
+    - Added heat consumption if you want to build cannon turrets on Aquilo them for some reason.
+    - Quality applies itself properly increasing range and health of turret and damage of ammo.
+    - Space Age Asteroïds are not hittable by cannon ammo projectile for now (even vanilla ones). Maybe I'll find a way to enable it.
+---------------------------------------------------------------------------------------------------
 Version: 1.12.1
 Date: 15.01.2022
   Changes:

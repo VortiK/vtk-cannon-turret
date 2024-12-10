@@ -1,9 +1,13 @@
+local item_sounds = require("__base__.prototypes.item_sounds")
+
 -- New category for turret cannon shells
 data:extend(
 {
   {
     type = "ammo-category",
-    name = "cannon-shell-magazine"
+    name = "cannon-shell-magazine",
+    icon = "__base__/graphics/icons/ammo-category/cannon-shell.png",
+    subgroup = "ammo-category"
   },
 })
 
@@ -17,6 +21,7 @@ data:extend(
     description = "cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/cannon-shell-magazine.png",
     icon_size = 64,
+    ammo_category = "cannon-shell-magazine",
     ammo_type =
     {
       category = "cannon-shell-magazine",
@@ -32,6 +37,7 @@ data:extend(
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = 30,
+          min_range = 5,
           source_effects =
           {
             type = "create-explosion",
@@ -43,7 +49,11 @@ data:extend(
     magazine_size = 10,
     subgroup = "ammo",
     order = "d[cannon-shell]-a[basic]-m[magazine]",
-    stack_size = 200
+    stack_size = 20,
+    inventory_move_sound = item_sounds.ammo_large_inventory_move,
+    pick_sound = item_sounds.ammo_large_inventory_pickup,
+    drop_sound = item_sounds.ammo_large_inventory_move,
+    weight = 20 * 12 * kg
   },
   {
     type = "ammo",
@@ -51,6 +61,7 @@ data:extend(
     description = "explosive-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/explosive-cannon-shell-magazine.png",
     icon_size = 64,
+    ammo_category = "cannon-shell-magazine",
     ammo_type =
     {
       category = "cannon-shell-magazine",
@@ -66,6 +77,7 @@ data:extend(
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = 30,
+          min_range = 5,
           source_effects =
           {
             type = "create-explosion",
@@ -77,7 +89,11 @@ data:extend(
     magazine_size = 10,
     subgroup = "ammo",
     order = "d[cannon-shell]-c[explosive]-m[magazine]",
-    stack_size = 200
+    stack_size = 20,
+    inventory_move_sound = item_sounds.ammo_large_inventory_move,
+    pick_sound = item_sounds.ammo_large_inventory_pickup,
+    drop_sound = item_sounds.ammo_large_inventory_move,
+    weight = 20 * 12 * kg
   },
   {
     type = "ammo",
@@ -85,6 +101,7 @@ data:extend(
     description = "uranium-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/uranium-cannon-shell-magazine.png",
     icon_size = 64,
+    ammo_category = "cannon-shell-magazine",
     ammo_type =
     {
       category = "cannon-shell-magazine",
@@ -100,6 +117,7 @@ data:extend(
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = 30,
+          min_range = 5,
           source_effects =
           {
             type = "create-explosion",
@@ -111,7 +129,11 @@ data:extend(
     magazine_size = 10,
     subgroup = "ammo",
     order = "d[cannon-shell]-c[uranium]-m[magazine]",
-    stack_size = 200
+    stack_size = 20,
+    inventory_move_sound = item_sounds.ammo_large_inventory_move,
+    pick_sound = item_sounds.ammo_large_inventory_pickup,
+    drop_sound = item_sounds.ammo_large_inventory_move,
+    weight = 40 * 12 * kg
   },
   {
     type = "ammo",
@@ -119,6 +141,7 @@ data:extend(
     description = "explosive-uranium-cannon-shell-magazine",
     icon = "__vtk-cannon-turret__/graphics/icons/explosive-uranium-cannon-shell-magazine.png",
     icon_size = 64,
+    ammo_category = "cannon-shell-magazine",
     ammo_type =
     {
       category = "cannon-shell-magazine",
@@ -134,6 +157,7 @@ data:extend(
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = 30,
+          min_range = 5,
           source_effects =
           {
             type = "create-explosion",
@@ -145,7 +169,11 @@ data:extend(
     magazine_size = 10,
     subgroup = "ammo",
     order = "d[explosive-cannon-shell]-c[uranium]-m[magazine]",
-    stack_size = 200
+    stack_size = 20,
+    inventory_move_sound = item_sounds.ammo_large_inventory_move,
+    pick_sound = item_sounds.ammo_large_inventory_pickup,
+    drop_sound = item_sounds.ammo_large_inventory_move,
+    weight = 40 * 12 * kg
   },
 })
 
@@ -162,12 +190,29 @@ return
   energy_required = 2,
   ingredients = 
   {
-    {"iron-plate", 2},
-    {"plastic-bar", 1},
-    {inputs.ingredient, 10},
+    {
+      type = "item",
+      name = "iron-plate",
+      amount = 2
+    },
+    {
+      type = "item",
+      name = "plastic-bar",
+      amount = 1
+    },
+    {
+      type = "item",
+      name = inputs.ingredient,
+      amount = 10
+    },
   },
-  result = inputs.name,
-  result_count = 1,
+  results = {
+    {
+      type = "item",
+      name = inputs.name,
+      amount = 1
+    }
+  },
   requester_paste_multiplier = 10,
 }
 end
@@ -187,11 +232,14 @@ data:extend(
     type = "projectile",
     name = "cannon-magazine-projectile",
 --    flags = {"not-on-map"},
+    hidden = true,
+    projectile_creation_distance = 1,
+    projectile_center = {0, 0},
+    force_condition = "not-same",
     collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
-    force_condition = "not-same", 
     acceleration = 0,
     direction_only = true,
-    piercing_damage = 300,
+    piercing_damage = 1000,
     action =
     {
       type = "direct",
@@ -202,7 +250,7 @@ data:extend(
         {
           {
             type = "damage",
-            damage = {amount = 200 , type = "physical"}
+            damage = {amount = 1000 , type = "physical"}
           },
           {
             type = "damage",
@@ -225,7 +273,7 @@ data:extend(
         {
           {
             type = "create-entity",
-            entity_name = "small-scorchmark",
+            entity_name = "small-scorchmark-tintable",
             check_buildability = true
           }
         }
@@ -282,11 +330,6 @@ data:extend(
             entity_name = "big-explosion"
           },
           {
-            type = "create-entity",
-            entity_name = "small-scorchmark",
-            check_buildability = true
-          },
-          {
             type = "nested-result",
             action =
             {
@@ -308,6 +351,25 @@ data:extend(
                 }
               }
             }
+          },
+          {
+            type = "create-entity",
+            entity_name = "medium-scorchmark-tintable",
+            check_buildability = true
+          },
+          {
+            type = "invoke-tile-trigger",
+            repeat_count = 1
+          },
+          {
+            type = "destroy-decoratives",
+            from_render_layer = "decorative",
+            to_render_layer = "object",
+            include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
+            include_decals = false,
+            invoke_decorative_trigger = true,
+            decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
+            radius = 2 -- large radius for demostrative purposes
           }
         }
       }
@@ -329,7 +391,7 @@ data:extend(
     force_condition = "not-same", 
     acceleration = 0,
     direction_only = true,
-    piercing_damage = 600,
+    piercing_damage = 2200,
     action =
     {
       type = "direct",
@@ -340,7 +402,7 @@ data:extend(
         {
           {
             type = "damage",
-            damage = {amount = 400 , type = "physical"}
+            damage = {amount = 2000 , type = "physical"}
           },
           {
             type = "damage",
@@ -363,7 +425,7 @@ data:extend(
         {
           {
             type = "create-entity",
-            entity_name = "small-scorchmark",
+            entity_name = "small-scorchmark-tintable",
             check_buildability = true
           }
         }
@@ -441,10 +503,25 @@ data:extend(
               }
             }
           },
+
           {
             type = "create-entity",
-            entity_name = "small-scorchmark",
+            entity_name = "medium-scorchmark-tintable",
             check_buildability = true
+          },
+          {
+            type = "invoke-tile-trigger",
+            repeat_count = 1
+          },
+          {
+            type = "destroy-decoratives",
+            from_render_layer = "decorative",
+            to_render_layer = "object",
+            include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
+            include_decals = false,
+            invoke_decorative_trigger = true,
+            decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
+            radius = 3.25 -- large radius for demostrative purposes
           }
         }
       }
