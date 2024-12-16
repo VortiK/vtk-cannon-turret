@@ -2,12 +2,13 @@
 Version: 2.1.0
 Date: 16.12.2024
   Changes:
-    - Turrets accept normal cannon ammo too
+    - Turrets accept normal cannon ammo too, but they hit buildings
     - New tech for heavy cannon
     - Made techs more expensive for progression
+    - Simplified descriptions
   Graphics:
     - Icons/thumbnail/techs reworked
-    - Upscaled small turret to scale 0.5, separated shadow, adjusted position
+    - Upscaled small turret to scale 0.5, separated shadow, adjusted position, ammo icon scaled
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 09.12.2024

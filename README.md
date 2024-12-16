@@ -13,15 +13,16 @@ Small mod that adds a cannon turret that can use specially manufactured tank she
 
 The goal of this mod was to make a different turret using tank shells but still close to Vanilla. Turret projectiles are identical to tank shells except they won't collide with friendly entities !
 
-Inspiration from an old 0.12 turret mod : https://forums.factorio.com/viewtopic.php?f=93&t=14957 and sprite by the talented modder YuokiTani.
-
-1.10 Super improved graphics provided by JavitoVk ! https://mods.factorio.com/mod/vtk-cannon-turret/discussion/5e9def993807a2000cca6d9a
-
 ![Comparison old vs new gfx](https://mods-data.factorio.com/assets/19f6b549976bba71f0565ed863140932065ea890.png)
 
-Compatible with Krastorio 2 : https://mods.factorio.com/mod/Krastorio2
+## Credits
+
+Original mod: AmbulatoryCortex https://forums.factorio.com/viewtopic.php?f=93&t=14957
+Original graphics: YuokiTani
+Graphics improvements: JavitoVk, snouz
 
 ---------------------------------------------------------------------------------------------------
 
 ## Todo
+
 - Military train wagon with cannon turrets and machine guns but actually already somewhat exists in https://mods.factorio.com/mod/Armored-train
