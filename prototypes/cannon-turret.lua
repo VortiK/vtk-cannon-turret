@@ -169,6 +169,7 @@ data:extend(
     inventory_size = 1,
     automated_ammo_count = 10,
     attacking_speed = 0.5,
+    icon_draw_specification = {scale = 0.7},
 
     alert_when_attacking = true,
     open_sound = {filename = "__base__/sound/open-close/turret-open.ogg", volume = 0.6},
@@ -306,6 +307,7 @@ data:extend(
     inventory_size = 1,
     automated_ammo_count = 10,
     attacking_speed = 0.5,
+    icon_draw_specification = {scale = 0.7},
     
     alert_when_attacking = true,
     open_sound = {filename = "__base__/sound/open-close/turret-open.ogg", volume = 0.6},
