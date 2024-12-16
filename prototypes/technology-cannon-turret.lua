@@ -1,34 +1,30 @@
--- New cannon turret and its shell magazine ammo technology
+local path = "__vtk-cannon-turret__"
 data:extend(
 {
   {
     type = "technology",
     name = "vtk-cannon-turret-unlock",
-    icon_size = 128,
-    icon = "__vtk-cannon-turret__/graphics/technology/cannon-turret-tech.png",
+    icon_size = 256,
+    icon = path .. "/graphics/technology/cannon-turret-tech.png",
     effects = 
     {
-        {
-          type = "unlock-recipe",
-          recipe = "vtk-cannon-turret"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "vtk-cannon-turret-heavy"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "cannon-shell-magazine"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "explosive-cannon-shell-magazine"
-        },
+      {
+        type = "unlock-recipe",
+        recipe = "vtk-cannon-turret"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "cannon-shell-magazine"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "explosive-cannon-shell-magazine"
+      },
+    },
     prerequisites = {"gun-turret", "tank"}, 
     unit =
     {
-      count = 100,
+      count = 350,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
@@ -42,25 +38,65 @@ data:extend(
   },
   {
     type = "technology",
-    name = "vtk-cannon-turret-wall-resistance",
-    icon_size = 128,
-    icon = "__vtk-cannon-turret__/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+    name = "vtk-cannon-turret-heavy-unlock",
+    icon_size = 256,
+    icon = path .. "/graphics/technology/cannon-turret-heavy-tech.png",
     effects = 
     {
-        {
-          type = "nothing",
-          effect_description = "Walls and gates explosion 90% resistance bonus"
-        },
+      {
+        type = "unlock-recipe",
+        recipe = "vtk-cannon-turret-heavy"
       },
-    prerequisites = {"vtk-cannon-turret-unlock", "stone-wall"}, 
+    },
+    prerequisites = {"vtk-cannon-turret-unlock"}, 
     unit =
     {
-      count = 100,
+      count = 350,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
         {"chemical-science-pack", 1},
         {"military-science-pack", 1},
+        {"production-science-pack", 1},
+      },
+      time = 30,
+    },
+    upgrade = true,
+    order = "e-c-c-a"
+  },
+  {
+    type = "technology",
+    name = "vtk-cannon-turret-wall-resistance",
+    icons = {
+      {
+        icon = path .. "/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+        icon_size = 256,
+      },
+      {
+        icon = path .. "/graphics/technology/constant-defense.png",
+        icon_size = 128,
+        scale = 0.5,
+        shift = {50, 50}
+      }
+    },
+    effects = 
+    {
+      {
+        type = "nothing",
+        effect_description = "Walls and gates explosion 90% resistance bonus"
+      },
+    },
+    prerequisites = {"vtk-cannon-turret-unlock", "stone-wall"}, 
+    unit =
+    {
+      count = 600,
+      ingredients = {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"military-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
       },
       time = 30,
     },
