@@ -250,11 +250,11 @@ data:extend(
     },
 
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    
+
     attack_parameters =
     {
       type = "projectile",
-      ammo_categories = {"cannon-shell-magazine", "cannon-shell"},
+      ammo_categories = {"cannon-shell"},
       cooldown = 180,
       projectile_creation_distance = 2,
       projectile_center = {0, 0.2},
@@ -386,7 +386,7 @@ data:extend(
     attack_parameters =
     {
       type = "projectile",
-      ammo_categories = {"cannon-shell-magazine", "cannon-shell"},
+      ammo_categories = {"cannon-shell"},
       cooldown = 90,
       projectile_creation_distance = 2,
       projectile_center = {0, 0},

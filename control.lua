@@ -29,3 +29,8 @@ script.on_event(events.on_entity_damaged,
     end,
     {{filter="type", type = "wall"}, {filter="type", type = "gate"}}
 )
+
+
+-- Need to run explosion tech setting here during mod init and mod reload : 
+-- on_init
+-- on_configuration_changed

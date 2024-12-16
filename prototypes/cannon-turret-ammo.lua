@@ -1,6 +1,8 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 local path = "__vtk-cannon-turret__"
 
+if  settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or 3 then
+
 -- New category for turret cannon shells
 data:extend(
 {
@@ -189,6 +191,7 @@ return
   name = inputs.name,
   enabled = false,
   energy_required = 2,
+  auto_recycle = false, -- ammo magazine recycle into themselves
   ingredients = 
   {
     {
@@ -537,3 +540,5 @@ data:extend(
     },
   },
 })
+
+end

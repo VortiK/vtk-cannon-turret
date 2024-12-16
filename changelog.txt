@@ -1,14 +1,24 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.0
+Date: 16.12.2024
+  Changes:
+    - Made ammo magazine not recyclable.
+    - Removed dependancies of mods not existing in 2.0.0 (Krastorio).
+    - Fixed Space-Age support instead of Quality for turrets heat consumption.
+    - Added setting for turrets to have both cannon shells and magazine ammo (by default magazine only, can be shells only or both).
+    - WIP Added setting to disable Wall & Gates explosion resistance research (enabled by default).
+    - WIP Heavy turret changed from 2x2 to 3x3 ?
+---------------------------------------------------------------------------------------------------
 Version: 2.1.0
 Date: 16.12.2024
   Changes:
-    - Turrets accept normal cannon ammo too, but they hit buildings
-    - New tech for heavy cannon
-    - Made techs more expensive for progression
-    - Simplified descriptions
+    - Turrets accept normal cannon ammo too, but they hit buildings.
+    - New tech for heavy cannon.
+    - Made techs more expensive for progression.
+    - Simplified descriptions.
   Graphics:
-    - Icons/thumbnail/techs reworked
-    - Upscaled small turret to scale 0.5, separated shadow, adjusted position, ammo icon scaled
+    - Icons/thumbnail/techs reworked.
+    - Upscaled small turret to scale 0.5, separated shadow, adjusted position, ammo icon scaled.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 09.12.2024
