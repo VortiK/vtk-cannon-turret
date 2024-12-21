@@ -4,33 +4,35 @@ local function debug(string)
     -- player.print(string)
 end
 
-local function update_entity_life(entity, damage, type)
-    if entity.force.technologies["vtk-cannon-turret-wall-resistance"].researched == false then
-        return
-    end
-    
-    if entity ~= nil
-    -- and (entity.name == "stone-wall" or entity.name == "gate")
-    and (entity.type == "wall" or entity.type == "gate" or entity.type == "turret")
-    and type.name == "explosion" then
-        debug("entity "..entity.name..""..entity.unit_number.." took "..damage.." damage of "..type.name.." type")
-        debug("health before "..entity.health)
-        entity.health = entity.health + damage*0.90
-        debug("health after "..entity.health)
+-- Apply unlocks and bonuses if already researched (case of loading an existing savegame)
+local function update_tech_unlock()
+    if settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or
+       settings.startup["vtk-cannon-turret-ammo-use"].value == 3 then
+        for index, force in pairs(game.forces) do
+            local technologies = force.technologies
+            local recipes = force.recipes
+
+            if technologies["uranium-ammo"].researched then 
+                recipes["uranium-cannon-shell-magazine"].enabled = true
+                recipes["explosive-uranium-cannon-shell-magazine"].enabled = true
+            end
+
+            -- Magazine ammo bonus are equal to non magazine ammo bonus, so we can just copy the bonuses to get the current researched bonus modifiers
+            force.set_ammo_damage_modifier("cannon-shell-magazine", force.get_ammo_damage_modifier("cannon-shell"))
+            force.set_gun_speed_modifier("cannon-shell-magazine", force.get_gun_speed_modifier("cannon-shell"))
+        end
     end
 end
 
 -- events hooks
 local events = defines.events
 
-script.on_event(events.on_entity_damaged,
-    function(event)
-        update_entity_life(event.entity, event.final_damage_amount, event.damage_type)
-    end,
-    {{filter="type", type = "wall"}, {filter="type", type = "gate"}}
-)
-
-
--- Need to run explosion tech setting here during mod init and mod reload : 
+-- Need to run update unlock depending on tech and setting here during mod init and mod reload : 
 -- on_init
 -- on_configuration_changed
+
+script.on_event({events.on_init, events.on_configuration_changed},
+    function(event)
+        update_tech_unlock()
+    end
+)

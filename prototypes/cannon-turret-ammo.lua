@@ -1,7 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 local path = "__vtk-cannon-turret__"
 
-if  settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or 3 then
+if settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or 3 then
 
 -- New category for turret cannon shells
 data:extend(
@@ -28,7 +28,7 @@ data:extend(
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "direction", -- was position -- was entity
+      target_type = "direction",
       action =
       {
         type = "direct",
@@ -68,7 +68,7 @@ data:extend(
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "direction", -- was position
+      target_type = "direction",
       action =
       {
         type = "direct",
@@ -108,7 +108,7 @@ data:extend(
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "direction", -- was position -- was entity
+      target_type = "direction",
       action =
       {
         type = "direct",
@@ -148,7 +148,7 @@ data:extend(
     ammo_type =
     {
       category = "cannon-shell-magazine",
-      target_type = "direction", -- was position
+      target_type = "direction",
       action =
       {
         type = "direct",
@@ -229,316 +229,44 @@ data:extend(
   build_ammo_recipe{name = "explosive-uranium-cannon-shell-magazine", ingredient = "explosive-uranium-cannon-shell"},
 })
 
--- New projectiles behavior for cannon turret shell magazine, same as shells
+--
+-- New projectiles behavior for cannon turret shell magazine, same as shells but without firendly entities collision
+--
+local proj = table.deepcopy(data.raw["projectile"]["cannon-projectile"])
+proj.name = "cannon-magazine-projectile"
+proj.flags = {}
+proj.direction_only = true -- make projectile vectorized instead of exploding on target
+proj.force_condition = "not-same"
+
+local projura = table.deepcopy(data.raw["projectile"]["uranium-cannon-projectile"])
+projura.name = "uranium-cannon-magazine-projectile"
+projura.flags = {}
+projura.direction_only = true -- make projectile vectorized instead of exploding on target
+projura.force_condition = "not-same"
+
+local projexp = table.deepcopy(data.raw["projectile"]["explosive-cannon-projectile"])
+projexp.name = "explosive-cannon-magazine-projectile"
+projexp.flags = {}
+projexp.direction_only = true
+projexp.force_condition = "not-same"
+
+local projuraexp = table.deepcopy(data.raw["projectile"]["explosive-uranium-cannon-projectile"])
+projuraexp.name = "explosive-uranium-cannon-magazine-projectile"
+projuraexp.flags = {}
+projuraexp.direction_only = true
+projuraexp.force_condition = "not-same"
+
+if settings.startup["vtk-cannon-turret-explosion-ff"].value == false then
+  projexp["final_action"]["action_delivery"]["target_effects"][2]["action"].force = "not-same"
+  projuraexp["final_action"]["action_delivery"]["target_effects"][2]["action"].force = "not-same"
+end
+
 data:extend(
 {
-  {
-    type = "projectile",
-    name = "cannon-magazine-projectile",
---    flags = {"not-on-map"},
-    hidden = true,
-    projectile_creation_distance = 1,
-    projectile_center = {0, 0},
-    force_condition = "not-same",
-    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
-    acceleration = 0,
-    direction_only = true,
-    piercing_damage = 1000,
-    action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "damage",
-            damage = {amount = 1000 , type = "physical"}
-          },
-          {
-            type = "damage",
-            damage = {amount = 100 , type = "explosion"}
-          },
-          {
-            type = "create-entity",
-            entity_name = "explosion"
-          }
-        }
-      }
-    },
-    final_action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "create-entity",
-            entity_name = "small-scorchmark-tintable",
-            check_buildability = true
-          }
-        }
-      }
-    },
-    animation =
-    {
-      filename = "__base__/graphics/entity/bullet/bullet.png",
-      frame_count = 1,
-      width = 3,
-      height = 50,
-      priority = "high"
-    },
-  },
-  {
-    type = "projectile",
-    name = "explosive-cannon-magazine-projectile",
---    flags = {"not-on-map"},
-    collision_box = {{-0.6, -1.6}, {0.6, 1.6}},
-    force_condition = "not-same", 
-    acceleration = 0,
-    direction_only = true, -- make projectile vectorized instead of exploding on target
-    piercing_damage = 100,
-    action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "damage",
-            damage = {amount = 180, type = "physical"}
-          },
-          {
-            type = "create-entity",
-            entity_name = "explosion"
-          }
-        }
-      }
-    },
-    final_action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-
-          {
-            type = "create-entity",
-            entity_name = "big-explosion"
-          },
-          {
-            type = "nested-result",
-            action =
-            {
-              type = "area",
-              radius = 4,
-              action_delivery =
-              {
-                type = "instant",
-                target_effects =
-                {
-                  {
-                    type = "damage",
-                    damage = {amount = 300, type = "explosion"}
-                  },
-                  {
-                    type = "create-entity",
-                    entity_name = "explosion"
-                  }
-                }
-              }
-            }
-          },
-          {
-            type = "create-entity",
-            entity_name = "medium-scorchmark-tintable",
-            check_buildability = true
-          },
-          {
-            type = "invoke-tile-trigger",
-            repeat_count = 1
-          },
-          {
-            type = "destroy-decoratives",
-            from_render_layer = "decorative",
-            to_render_layer = "object",
-            include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
-            include_decals = false,
-            invoke_decorative_trigger = true,
-            decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-            radius = 2 -- large radius for demostrative purposes
-          }
-        }
-      }
-    },
-    animation =
-    {
-      filename = "__base__/graphics/entity/bullet/bullet.png",
-      frame_count = 1,
-      width = 3,
-      height = 50,
-      priority = "high"
-    },
-  },
-  {
-    type = "projectile",
-    name = "uranium-cannon-magazine-projectile",
---    flags = {"not-on-map"},
-    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
-    force_condition = "not-same", 
-    acceleration = 0,
-    direction_only = true,
-    piercing_damage = 2200,
-    action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "damage",
-            damage = {amount = 2000 , type = "physical"}
-          },
-          {
-            type = "damage",
-            damage = {amount = 200 , type = "explosion"}
-          },
-          {
-            type = "create-entity",
-            entity_name = "uranium-cannon-explosion"
-          }
-        }
-      }
-    },
-    final_action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "create-entity",
-            entity_name = "small-scorchmark-tintable",
-            check_buildability = true
-          }
-        }
-      }
-    },
-    animation =
-    {
-      filename = "__base__/graphics/entity/bullet/bullet.png",
-      frame_count = 1,
-      width = 3,
-      height = 50,
-      priority = "high"
-    },
-  },
-  {
-    type = "projectile",
-    name = "explosive-uranium-cannon-magazine-projectile",
---    flags = {"not-on-map"},
-    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
-    force_condition = "not-same", 
-    acceleration = 0,
-    direction_only = true,
-    piercing_damage = 150,
-    action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "damage",
-            damage = {amount = 350 , type = "physical"}
-          },
-          {
-            type = "create-entity",
-            entity_name = "uranium-cannon-explosion"
-          },
-        }
-      }
-    },
-    final_action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "create-entity",
-            entity_name = "uranium-cannon-shell-explosion"
-          },
-          {
-            type = "nested-result",
-            action =
-            {
-              type = "area",
-              radius = 4.25,
-              action_delivery =
-              {
-                type = "instant",
-                target_effects =
-                {
-                  {
-                    type = "damage",
-                    damage = {amount = 315, type = "explosion"}
-                  },
-                  {
-                    type = "create-entity",
-                    entity_name = "uranium-cannon-explosion"
-                  }
-                }
-              }
-            }
-          },
-
-          {
-            type = "create-entity",
-            entity_name = "medium-scorchmark-tintable",
-            check_buildability = true
-          },
-          {
-            type = "invoke-tile-trigger",
-            repeat_count = 1
-          },
-          {
-            type = "destroy-decoratives",
-            from_render_layer = "decorative",
-            to_render_layer = "object",
-            include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
-            include_decals = false,
-            invoke_decorative_trigger = true,
-            decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-            radius = 3.25 -- large radius for demostrative purposes
-          }
-        }
-      }
-    },
-    animation =
-    {
-      filename = "__base__/graphics/entity/bullet/bullet.png",
-      frame_count = 1,
-      width = 3,
-      height = 50,
-      priority = "high"
-    },
-  },
+  proj,
+  projexp,
+  projura,
+  projuraexp,
 })
 
 end

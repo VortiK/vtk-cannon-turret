@@ -1,12 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.0
-Date: 16.12.2024
+Date: 21.12.2024
   Changes:
-    - Made ammo magazine not recyclable.
+    - Made ammo magazine not recyclable (recycle into themselves).
     - Removed dependancies of mods not existing in 2.0.0 (Krastorio).
     - Fixed Space-Age support instead of Quality for turrets heat consumption.
     - Added setting for turrets to have both cannon shells and magazine ammo (by default magazine only, can be shells only or both).
-    - WIP Added setting to disable Wall & Gates explosion resistance research (enabled by default).
+    - Refactor code to copy base Cannon Shell Projectiles and overload firendly fire behavior (improve vanilla compatibility and reduce code maintenance).
+    - Added setting to use old Cannon Magazine Ammo Icons (by default use new icons).
+    - Changed wall explosion resistance, tech removed, now explosion firendly fire is a setting (disabled by default) and affects all entites (much more simple to maintain and no game performance impact).
     - WIP Heavy turret changed from 2x2 to 3x3 ?
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.0
