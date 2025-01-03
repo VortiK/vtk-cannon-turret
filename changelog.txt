@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.0
+Date: 21.12.2024
+  Changes:
+    - Heavy Cannon Turret is now a 3x3 entity from 2x2.
+    - Heavy Cannon Turret shooting sound twice louder. It's Heavy afterall.
+---------------------------------------------------------------------------------------------------
+Version: 2.2.1
+Date: 21.12.2024
+  Changes:
+    - Fixed missing Cannon Shell Magazine ammo damage and shooting speed bonus following refactor (still the same as normal Cannon Shell bonus).
+---------------------------------------------------------------------------------------------------
 Version: 2.2.0
 Date: 21.12.2024
   Changes:
@@ -9,11 +20,13 @@ Date: 21.12.2024
     - Refactor code to copy base Cannon Shell Projectiles and overload firendly fire behavior (improve vanilla compatibility and reduce code maintenance).
     - Added setting to use old Cannon Magazine Ammo Icons (by default use new icons).
     - Changed wall explosion resistance, tech removed, now explosion firendly fire is a setting (disabled by default) and affects all entites (much more simple to maintain and no game performance impact).
+    - Refactor setting application on mod init and configuration change, should handle properly all cases of adding a mod in a current game and changing settings.
     - WIP Heavy turret changed from 2x2 to 3x3 ?
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.0
 Date: 16.12.2024
   Changes:
+    - Major contribution by snouz thanks a lot!
     - Turrets accept normal cannon ammo too, but they hit buildings.
     - New tech for heavy cannon.
     - Made techs more expensive for progression.

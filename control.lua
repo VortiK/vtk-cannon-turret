@@ -7,7 +7,7 @@ end
 -- Apply unlocks and bonuses if already researched (case of loading an existing savegame)
 local function update_tech_unlock()
     if settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or
-       settings.startup["vtk-cannon-turret-ammo-use"].value == 3 then
+    settings.startup["vtk-cannon-turret-ammo-use"].value == 3 then
         for index, force in pairs(game.forces) do
             local technologies = force.technologies
             local recipes = force.recipes

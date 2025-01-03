@@ -58,7 +58,7 @@ local function cannon_turret_heavy_extension(inputs)
   {
     filename = path .. "/graphics/entity/cannon-turret-heavy.png",
     priority = "medium",
-    scale = 0.5,
+    scale = 0.75,
     line_length = 1,
     width = 179,
     height = 132,
@@ -74,7 +74,7 @@ local function cannon_turret_heavy_extension_mask(inputs)
   return
   {
     filename = path .. "/graphics/entity/cannon-turret-heavy-mask.png",
-    scale = 0.5,
+    scale = 0.75,
     flags = { "mask" },
     line_length = 8,
     width = 72,
@@ -91,7 +91,7 @@ local function cannon_turret_heavy_extension_shadow(inputs)
   return
   {
     filename = path .. "/graphics/entity/cannon-turret-heavy-shadow.png",
-    scale = 0.5,
+    scale = 0.75,
     line_length = 1,
     width = 193,
     height = 134,
@@ -111,7 +111,7 @@ local function cannon_turret_heavy_attack(inputs)
     {
       {
         filename = path .. "/graphics/entity/cannon-turret-heavy.png",
-        scale = 0.5,
+        scale = 0.75,
         line_length = 8,
         width = 179,
         height = 132,
@@ -122,7 +122,7 @@ local function cannon_turret_heavy_attack(inputs)
       },
       {
         filename = path .. "/graphics/entity/cannon-turret-heavy-mask.png",
-        scale = 0.5,
+        scale = 0.75,
         flags = { "mask" },
         line_length = 8,
         width = 72,
@@ -135,7 +135,7 @@ local function cannon_turret_heavy_attack(inputs)
       },
       {
         filename = path .. "/graphics/entity/cannon-turret-heavy-shadow.png",
-        scale = 0.5,
+        scale = 0.75,
         line_length = 8,
         width = 193,
         height = 134,
@@ -298,8 +298,8 @@ data:extend(
     minable = {mining_time = 1, result = "vtk-cannon-turret-heavy"},
     max_health = 2000,
     corpse = "medium-remnants",
-    collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
-    selection_box = {{-1, -1 }, {1, 1}},
+    collision_box = {{-1.2, -1.2 }, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5 }, {1.5, 1.5}},
     rotation_speed = 0.0015,
     preparing_speed = 0.04,
     folding_speed = 0.04,
@@ -354,18 +354,18 @@ data:extend(
           {
             {
               filename = path .. "/graphics/entity/cannon-turret-heavy-base.png",
-              scale = 0.5,
+              scale = 0.75,
               priority = "high",
               width = 150,
               height = 118,
               axially_symmetrical = false,
               direction_count = 1,
               frame_count = 1,
-              shift = {0.0625, -0.046875},
+              shift = {0.0625, 0.25},
             },
             {
               filename = path .. "/graphics/entity/cannon-turret-heavy-base-mask.png",
-              scale = 0.5,
+              scale = 0.75,
               flags = { "mask" },
               line_length = 1,
               width = 122,
@@ -373,7 +373,7 @@ data:extend(
               axially_symmetrical = false,
               direction_count = 1,
               frame_count = 1,
-              shift = {0.05, -0.15},
+              shift = {0.05, 0.25},
               apply_runtime_tint = true
             }
           }
@@ -412,7 +412,7 @@ data:extend(
         {
             -- filename = "__base__/sound/fight/tank-cannon.ogg",
             filename = path .. "/sounds/CANNHVY5.ogg",
-            volume = 1.0
+            volume = 2.0
         }
       },
     },
