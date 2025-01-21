@@ -1,4 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local path = "__vtk-cannon-turret__"
 
 local function cannon_turret_sheet(inputs)
@@ -162,10 +163,11 @@ data:extend(
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},
+    damaged_trigger_effect = hit_effects.entity(),
     rotation_speed = 0.003,
     preparing_speed = 0.04,
     folding_speed = 0.04,
-    dying_explosion = "medium-explosion",
+    dying_explosion = "gun-turret-explosion",
     inventory_size = 1,
     automated_ammo_count = 10,
     attacking_speed = 0.5,
@@ -256,7 +258,7 @@ data:extend(
       type = "projectile",
       ammo_categories = {"cannon-shell"},
       cooldown = 180,
-      projectile_creation_distance = 2,
+      projectile_creation_distance = 1.5,
       projectile_center = {0, 0.2},
       damage_modifier = 1,
       shell_particle =
@@ -274,6 +276,8 @@ data:extend(
       min_range = 12,
       prepare_range = 45,
       shoot_in_prepare_state = false,
+      lead_target_for_projectile_speed = 1, -- same speed as starting_speed for ammunition
+      use_shooter_direction = true,
       sound =
       {
         {
@@ -300,10 +304,11 @@ data:extend(
     corpse = "medium-remnants",
     collision_box = {{-1.2, -1.2 }, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5 }, {1.5, 1.5}},
+    damaged_trigger_effect = hit_effects.entity(),
     rotation_speed = 0.0015,
     preparing_speed = 0.04,
     folding_speed = 0.04,
-    dying_explosion = "medium-explosion",
+    dying_explosion = "gun-turret-explosion",
     inventory_size = 1,
     automated_ammo_count = 10,
     attacking_speed = 0.5,
@@ -389,7 +394,7 @@ data:extend(
       ammo_categories = {"cannon-shell"},
       cooldown = 90,
       projectile_creation_distance = 2,
-      projectile_center = {0, 0},
+      projectile_center = {0, 0.2},
       damage_modifier = 1,
       shell_particle =
       {
@@ -406,6 +411,8 @@ data:extend(
       min_range = 12,
       prepare_range = 35,
       shoot_in_prepare_state = false,
+      lead_target_for_projectile_speed = 1, -- same speed as starting_speed for ammunition
+      use_shooter_direction = true,
       turn_range = 2.0 / 5.0,
       sound =
       {

@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.2
+Date: 21.01.2025
+  Changes:
+    - Add cannon turret projectile target mouvement lead, improves performance. Thanks Wozbo for the contribution https://mods.factorio.com/mod/vtk-cannon-turret/discussion/676a23b6c2fc9cda230ab9f2
+    - Fixed asteroïds not being hit by cannon projectiles. Not as powerful as railgun but still kinda OP in comparison, although you need more manufacturing (plastic/uranium) or logistics to supply them in space (only 2 mags / 20 shots per rocket launch).
+---------------------------------------------------------------------------------------------------
 Version: 2.3.1
 Date: 03.01.2025
   Changes:

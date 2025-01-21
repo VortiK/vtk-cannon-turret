@@ -237,24 +237,28 @@ proj.name = "cannon-magazine-projectile"
 proj.flags = {}
 proj.direction_only = true -- make projectile vectorized instead of exploding on target
 proj.force_condition = "not-same"
+proj.hit_collision_mask = {layers={object=true, player=true, train=true, trigger_target=true}}
 
 local projura = table.deepcopy(data.raw["projectile"]["uranium-cannon-projectile"])
 projura.name = "uranium-cannon-magazine-projectile"
 projura.flags = {}
 projura.direction_only = true -- make projectile vectorized instead of exploding on target
 projura.force_condition = "not-same"
+projura.hit_collision_mask = {layers={object=true, player=true, train=true, trigger_target=true}}
 
 local projexp = table.deepcopy(data.raw["projectile"]["explosive-cannon-projectile"])
 projexp.name = "explosive-cannon-magazine-projectile"
 projexp.flags = {}
 projexp.direction_only = true
 projexp.force_condition = "not-same"
+projexp.hit_collision_mask = {layers={object=true, player=true, train=true, trigger_target=true}}
 
 local projuraexp = table.deepcopy(data.raw["projectile"]["explosive-uranium-cannon-projectile"])
 projuraexp.name = "explosive-uranium-cannon-magazine-projectile"
 projuraexp.flags = {}
 projuraexp.direction_only = true
 projuraexp.force_condition = "not-same"
+projuraexp.hit_collision_mask = {layers={object=true, player=true, train=true, trigger_target=true}}
 
 if settings.startup["vtk-cannon-turret-explosion-ff"].value == false then
   projexp["final_action"]["action_delivery"]["target_effects"][2]["action"].force = "not-same"
