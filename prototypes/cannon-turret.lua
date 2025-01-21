@@ -274,6 +274,8 @@ data:extend(
       min_range = 12,
       prepare_range = 45,
       shoot_in_prepare_state = false,
+      lead_target_for_projectile_speed = 1, -- same speed as starting_speed for ammunition
+      use_shooter_direction = true,
       sound =
       {
         {
@@ -406,6 +408,8 @@ data:extend(
       min_range = 12,
       prepare_range = 35,
       shoot_in_prepare_state = false,
+      lead_target_for_projectile_speed = 1, -- same speed as starting_speed for ammunition
+      use_shooter_direction = true,
       turn_range = 2.0 / 5.0,
       sound =
       {
