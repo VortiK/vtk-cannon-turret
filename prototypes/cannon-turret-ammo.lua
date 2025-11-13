@@ -1,7 +1,8 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 local path = "__vtk-cannon-turret__"
 
-if settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or 3 then
+if settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or
+   settings.startup["vtk-cannon-turret-ammo-use"].value == 3 then
 
 -- New category for turret cannon shells
 data:extend(
@@ -39,7 +40,7 @@ data:extend(
           starting_speed = 1,
           direction_deviation = 0.1,
           range_deviation = 0.1,
-          max_range = 30,
+          max_range = 35,
           min_range = 5,
           source_effects =
           {
@@ -79,7 +80,7 @@ data:extend(
           starting_speed = 1,
           direction_deviation = 0.1,
           range_deviation = 0.1,
-          max_range = 30,
+          max_range = 35,
           min_range = 5,
           source_effects =
           {
@@ -119,7 +120,7 @@ data:extend(
           starting_speed = 1,
           direction_deviation = 0.1,
           range_deviation = 0.1,
-          max_range = 30,
+          max_range = 35,
           min_range = 5,
           source_effects =
           {
@@ -159,7 +160,7 @@ data:extend(
           starting_speed = 1,
           direction_deviation = 0.1,
           range_deviation = 0.1,
-          max_range = 30,
+          max_range = 35,
           min_range = 5,
           source_effects =
           {

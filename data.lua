@@ -38,10 +38,10 @@ if settings.startup["vtk-cannon-turret-ammo-use"].value == 1 or
     data.raw["ammo"]["uranium-cannon-shell-magazine"].icon = path .. "/graphics/icons/uranium-cannon-shell-magazine-old.png"
     data.raw["ammo"]["explosive-uranium-cannon-shell-magazine"].icon = path .. "/graphics/icons/explosive-uranium-cannon-shell-magazine-old.png"
   end
-end
 
-if settings.startup["vtk-cannon-turret-magazine-new-icon"].value == false then
-  data.raw["ammo-category"]["cannon-shell-magazine"].icon = path .. "/graphics/icons/cannon-shell-magazine-old.png"
-else
-  data.raw["ammo-category"]["cannon-shell-magazine"].icon = path .. "/graphics/icons/cannon-shell-magazine.png"
+  if settings.startup["vtk-cannon-turret-magazine-new-icon"].value == false then
+    data.raw["ammo-category"]["cannon-shell-magazine"].icon = path .. "/graphics/icons/cannon-shell-magazine-old.png"
+  else
+    data.raw["ammo-category"]["cannon-shell-magazine"].icon = path .. "/graphics/icons/cannon-shell-magazine.png"
+  end
 end

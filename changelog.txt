@@ -1,4 +1,27 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.4.2
+Date: 13.11.2025
+  Changes:
+    - Fixed Magazine ammo still being generated when "use shell only" is selected in mod setting (thanks PR by FiveYellowMice https://github.com/VortiK/vtk-cannon-turret/pull/4).
+    - Fixed Shell only mod fail on startup with Age of Production because of badly conditionned "batch" recipe generation.
+---------------------------------------------------------------------------------------------------
+Version: 2.4.1
+Date: 14.04.2025
+  Changes:
+    - Add missing translations for newly added "batch" recipes :facepalm:.
+---------------------------------------------------------------------------------------------------
+Version: 2.4.0
+Date: 14.04.2025
+  Changes:
+    - Add compatibility with Age of Production, new "batch" recipes to directly build shell magazine from raw materials.
+    - Cannon Shell and Explosive Cannon Shell Magazines can be made in Armory only.
+    - Uranium Shell and Explosive Uranium Cannon Shell Magazines can be made in the Atom Forge only.
+---------------------------------------------------------------------------------------------------
+Version: 2.3.3
+Date: 25.03.2025
+  Changes:
+    - Increased all Magazine ammo max_range from 30 to 35 to perform better at extreme range (eg. legendary cannon turret 52 range, note that the turret range takes over the ammo range in this case).
+---------------------------------------------------------------------------------------------------
 Version: 2.3.2
 Date: 21.01.2025
   Changes:
