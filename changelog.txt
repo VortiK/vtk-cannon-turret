@@ -3,6 +3,7 @@ Version: 2.4.3
 Date: 24.06.2026
   Changes:
     - Set factorio_version to 2.1 for Factorio 2.1.x compatibility.
+    - Migrated Age of Production batch recipe "category" to the new "categories" table (required by 2.1).
     - Setting for shell ammo type now offers 3 fixed options instead of free numeric input.
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.2

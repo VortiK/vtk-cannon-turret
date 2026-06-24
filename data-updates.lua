@@ -13,7 +13,7 @@ settings.startup["vtk-cannon-turret-ammo-use"].value == 3 then
             enabled = false,
             energy_required = 2,
             auto_recycle = false, -- ammo magazine recycle into themselves
-            category = inputs.category,
+            categories = { inputs.category },
             -- test if this is needed by raw armory factory productivity
             -- but may enable it anyway to benefit from module since the recipe is only available in this special factory
             allow_productivity = true,
