@@ -4,9 +4,8 @@ data:extend({
     type = "int-setting",
 	name = "vtk-cannon-turret-ammo-use",
 	setting_type = "startup",
-	minimum_value = 1,
 	default_value = 1,
-	maximum_value = 3,
+    allowed_values = {1, 2, 3},
 	order = "1"
   },
   {
