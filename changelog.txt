@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.4.3
+Date: 24.06.2026
+  Changes:
+    - Set factorio_version to 2.1 for Factorio 2.1.x compatibility.
+    - Setting for shell ammo type now offers 3 fixed options instead of free numeric input.
+---------------------------------------------------------------------------------------------------
 Version: 2.4.2
 Date: 13.11.2025
   Changes:
